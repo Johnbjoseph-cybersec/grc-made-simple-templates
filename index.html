@@ -196,6 +196,23 @@ section.tpl{padding:110px 0 30px}
 
 /* ---------- steps ---------- */
 section.how{padding:100px 0}
+.yt{padding:110px 0 40px}
+.yt .head{display:flex;justify-content:space-between;align-items:flex-end;gap:24px;flex-wrap:wrap}
+.yt .grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;margin-top:40px}
+.vid{display:block;text-decoration:none;color:var(--ink);background:var(--s1);border:1px solid var(--line);border-radius:18px;overflow:hidden;
+  transition:transform .3s cubic-bezier(.2,.7,.2,1),border-color .3s,box-shadow .3s}
+.vid:hover{transform:translateY(-4px);border-color:rgba(253,181,74,.35);box-shadow:0 24px 50px -24px rgba(0,0,0,.6)}
+.vid .th{position:relative;aspect-ratio:16/9;overflow:hidden;background:#0b1222}
+.vid .th img{width:100%;height:100%;object-fit:cover;display:block;transition:transform .6s cubic-bezier(.2,.7,.2,1)}
+.vid:hover .th img{transform:scale(1.04)}
+.vid .play{position:absolute;inset:auto auto 14px 14px;width:44px;height:44px;border-radius:50%;background:var(--acc);display:grid;place-items:center;
+  box-shadow:0 10px 30px -8px var(--accglow)}
+.vid .play svg{width:16px;height:16px;margin-left:3px;fill:#141b2d}
+.vid .dur{position:absolute;right:12px;bottom:12px;font-family:var(--mono);font-size:12px;padding:3px 8px;border-radius:6px;background:rgba(8,12,22,.82);color:#fff}
+.vid .tx{padding:18px 20px 22px}
+.vid .pair{font-family:var(--mono);font-size:11.5px;letter-spacing:.08em;text-transform:uppercase;color:var(--acc)}
+.vid h4{font-size:17px;line-height:1.35;letter-spacing:-.01em;margin-top:8px;font-weight:600}
+@media (max-width:900px){.yt .grid{grid-template-columns:1fr}.yt{padding:80px 0 20px}}
 .steps{position:relative;display:grid;grid-template-columns:repeat(3,1fr);gap:28px;margin-top:48px}
 .steps svg.line{position:absolute;left:0;right:0;top:22px;width:100%;height:4px;overflow:visible}
 .step{position:relative;padding-top:64px}
@@ -468,6 +485,33 @@ footer a{color:var(--ink2)}
   </div>
 </section>
 
+<section class="yt" id="watch">
+  <div class="wrap">
+    <div class="head">
+      <div>
+        <div class="mono reveal">Learn it on YouTube</div>
+        <h2 class="split" style="font-size:clamp(30px,3.4vw,44px);letter-spacing:-.03em;line-height:1.1;margin-top:12px;max-width:760px">The template gives you the sheet. The video explains why each column is there.</h2>
+      </div>
+      <a class="btn btn-ghost magnetic" href="https://www.youtube.com/@GRCMadeSimple?sub_confirmation=1" target="_blank" rel="noopener">
+        <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M23 7.2a3 3 0 0 0-2.1-2.1C19 4.6 12 4.6 12 4.6s-7 0-8.9.5A3 3 0 0 0 1 7.2 31 31 0 0 0 .5 12a31 31 0 0 0 .5 4.8 3 3 0 0 0 2.1 2.1c1.9.5 8.9.5 8.9.5s7 0 8.9-.5a3 3 0 0 0 2.1-2.1 31 31 0 0 0 .5-4.8 31 31 0 0 0-.5-4.8ZM9.8 15.1V8.9l5.4 3.1-5.4 3.1Z"/></svg>Subscribe on YouTube</a>
+    </div>
+    <div class="grid">
+      <a class="vid reveal" href="https://www.youtube.com/watch?v=IJ6NCQ3WDfE" target="_blank" rel="noopener">
+        <div class="th"><img src="assets/yt-IJ6NCQ3WDfE.jpg" alt="" loading="lazy" width="480" height="360"><span class="play"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 4l14 8-14 8z"/></svg></span><span class="dur">8 min</span></div>
+        <div class="tx"><div class="pair">Pairs with the AI inventory</div><h4>ISO 42001 Explained: the AI governance standard</h4></div>
+      </a>
+      <a class="vid reveal" href="https://www.youtube.com/watch?v=4errQPTkgDA" target="_blank" rel="noopener">
+        <div class="th"><img src="assets/yt-4errQPTkgDA.jpg" alt="" loading="lazy" width="480" height="360"><span class="play"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 4l14 8-14 8z"/></svg></span><span class="dur">16 min</span></div>
+        <div class="tx"><div class="pair">Pairs with the AI vendor DDQ</div><h4>ISO 27090 Explained: the 9 ways attackers target your AI</h4></div>
+      </a>
+      <a class="vid reveal" href="https://www.youtube.com/watch?v=VsZ54SHovJU" target="_blank" rel="noopener">
+        <div class="th"><img src="assets/yt-VsZ54SHovJU.jpg" alt="" loading="lazy" width="480" height="360"><span class="play"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 4l14 8-14 8z"/></svg></span><span class="dur">1 h 46 min</span></div>
+        <div class="tx"><div class="pair">Start of any GRC programme</div><h4>How to build a practical GRC program from scratch, with Moses Omolaiye</h4></div>
+      </a>
+    </div>
+  </div>
+</section>
+
 <section class="about" id="about">
   <div class="wrap">
     <div class="card-john reveal">
@@ -475,7 +519,7 @@ footer a{color:var(--ink2)}
       <div>
         <div class="mono">Made by</div>
         <h2>John Bommeraveni Joseph</h2>
-        <p>ISO 27001, 42001 &amp; 27701 Lead Auditor, Co-Founder &amp; CPTO at Purplecop Security, and creator of the free GRC Practice Lab used by more than 10,000 people in 34 countries. New templates land first on LinkedIn, alongside the free weekday newsletter, GRC Made Simple Daily.</p>
+        <p>ISO 27001, 42001 &amp; 27701 Lead Auditor, Co-Founder &amp; CPTO at Purplecop Security, and creator of the free GRC Practice Lab used by more than 10,000 people in 34 countries. New templates land first on LinkedIn, alongside the free weekday newsletter, GRC Made Simple Daily, and the walkthroughs on the GRC Made Simple YouTube channel.</p>
       </div>
       <div class="acts">
         <a class="btn btn-acc magnetic" href="https://www.linkedin.com/in/john-bj/" target="_blank" rel="noopener">
