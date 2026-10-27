@@ -4,106 +4,675 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>GRC Made Simple Templates</title>
-<meta name="description" content="Free, comprehensive GRC templates by John Bommeraveni Joseph: AI inventory and risk register, PQC migration workbook, AI vendor due diligence, DPDP readiness checklist.">
+<meta name="description" content="Four free, working Excel templates for GRC teams: AI system inventory and risk register, cryptographic inventory and PQC migration workbook, AI vendor due-diligence questionnaire, DPDP readiness checklist. By John Bommeraveni Joseph, ISO 27001, 42001 & 27701 Lead Auditor.">
+<link rel="canonical" href="https://johnbjoseph-cybersec.github.io/grc-made-simple-templates/">
+<meta property="og:type" content="website">
 <meta property="og:title" content="GRC Made Simple Templates">
-<meta property="og:description" content="Free, practitioner-grade GRC templates by John Bommeraveni Joseph, ISO 27001, 42001 & 27701 Lead Auditor.">
-<meta property="og:image" content="assets/gms-logo.png">
+<meta property="og:description" content="Free GRC templates that hold up in an audit. 5,367 working formulas, built against the EU AI Act, ISO/IEC 42001, NIST and India's DPDP Rules.">
+<meta property="og:image" content="https://johnbjoseph-cybersec.github.io/grc-made-simple-templates/assets/gms-logo.png">
+<meta name="theme-color" content="#0a1120">
 <link rel="icon" href="assets/gms-logo.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"CollectionPage","name":"GRC Made Simple Templates",
+ "url":"https://johnbjoseph-cybersec.github.io/grc-made-simple-templates/",
+ "author":{"@type":"Person","name":"John Bommeraveni Joseph","url":"https://www.linkedin.com/in/john-bj/","jobTitle":"Co-Founder & Chief Product and Technology Officer, Purplecop Security"},
+ "license":"https://creativecommons.org/licenses/by/4.0/",
+ "hasPart":[
+  {"@type":"CreativeWork","name":"AI System Inventory & Risk Register","encodingFormat":"application/vnd.openxmlformats-officedocument.spreadsheetml.sheet"},
+  {"@type":"CreativeWork","name":"Crypto Inventory & PQC Migration Workbook","encodingFormat":"application/vnd.openxmlformats-officedocument.spreadsheetml.sheet"},
+  {"@type":"CreativeWork","name":"AI Vendor Due-Diligence Questionnaire","encodingFormat":"application/vnd.openxmlformats-officedocument.spreadsheetml.sheet"},
+  {"@type":"CreativeWork","name":"DPDP Act & Rules Readiness Checklist","encodingFormat":"application/vnd.openxmlformats-officedocument.spreadsheetml.sheet"}]}
+</script>
 <style>
-  :root { --navy:#111a2e; --navy2:#16213a; --ink:#e8edf7; --muted:#a9b4cc; --orange:#fdb54a; --orange2:#f5a83c; --card:#18233d; --line:rgba(253,181,74,.28); }
-  * { box-sizing: border-box; margin: 0; padding: 0; }
-  body { font-family: Poppins, system-ui, sans-serif; background: linear-gradient(170deg, var(--navy2), var(--navy) 60%, #0d1424); color: var(--ink); line-height: 1.6; }
-  a { color: var(--orange); }
-  .wrap { max-width: 1080px; margin: 0 auto; padding: 0 20px; }
-  header { padding: 40px 0 28px; display: flex; align-items: center; gap: 18px; }
-  header img { width: 64px; height: 64px; border-radius: 50%; box-shadow: 0 0 0 4px var(--orange); }
-  header .brand { font-size: 22px; font-weight: 700; }
-  header .brand b { color: var(--orange); }
-  .hero { padding: 24px 0 36px; }
-  h1 { font-size: clamp(28px, 5vw, 46px); overflow-wrap: break-word; line-height: 1.15; font-weight: 700; max-width: 820px; }
-  h1 span { color: var(--orange); }
-  .lede { color: var(--muted); font-size: 17px; max-width: 720px; margin-top: 16px; font-weight: 300; }
-  .follow { margin-top: 28px; display: flex; flex-wrap: wrap; align-items: center; gap: 18px; background: rgba(253,181,74,.08); border: 1px solid var(--line); border-radius: 16px; padding: 18px 20px; max-width: 760px; }
-  .follow img { width: 56px; height: 56px; border-radius: 50%; object-fit: cover; box-shadow: 0 0 0 3px var(--orange); }
-  .follow .who { flex: 1 1 260px; font-size: 14px; color: var(--muted); }
-  .follow .who b { color: var(--ink); font-size: 16px; font-weight: 600; display: block; }
-  .btn { display: inline-block; text-decoration: none; font-weight: 600; font-size: 15px; padding: 12px 20px; border-radius: 999px; }
-  .btn-primary { background: var(--orange); color: #1b2236; }
-  .btn-primary:hover { background: var(--orange2); }
-  .btn-ghost { border: 1.5px solid var(--orange); color: var(--orange); }
-  .grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 18px; padding-bottom: 40px; }
-  @media (max-width: 760px) { .grid { grid-template-columns: minmax(0, 1fr); } }
-  .card { background: var(--card); border: 1px solid rgba(255,255,255,.07); border-radius: 18px; padding: 24px; display: flex; flex-direction: column; }
-  .tag { font-size: 12px; letter-spacing: .12em; text-transform: uppercase; color: var(--orange); font-weight: 600; }
-  .card h2 { font-size: 21px; margin: 8px 0 10px; line-height: 1.3; }
-  .card p { color: var(--muted); font-size: 14.5px; font-weight: 300; }
-  .card ul { color: var(--muted); font-size: 14px; margin: 12px 0 18px 18px; font-weight: 300; }
-  .card .meta { font-size: 13px; color: var(--muted); margin-bottom: 16px; }
-  .card .btn { margin-top: auto; align-self: flex-start; }
-  .note { border-top: 1px solid rgba(255,255,255,.08); padding: 28px 0 48px; color: var(--muted); font-size: 13.5px; font-weight: 300; }
-  .note b { color: var(--ink); font-weight: 500; }
-  @media (max-width: 520px) { header { padding-top: 24px; } .follow { padding: 16px; } }
+:root{
+  --s0:#0a1120; --s1:#0f1829; --s2:#142037; --s3:#1a2843;
+  --line:rgba(255,255,255,.07); --line2:rgba(255,255,255,.12);
+  --ink:#eef2fa; --ink2:#b4bfd6; --ink3:#7d8aa6;
+  --acc:#fdb54a; --acc2:#f5a83c; --accglow:rgba(253,181,74,.35);
+  --red:#f26d6d; --amber:#f2c14e; --green:#4fd1a1;
+  --ease-out:cubic-bezier(.16,1,.3,1); --ease-io:cubic-bezier(.65,0,.35,1);
+  --disp:"Poppins",system-ui,sans-serif; --mono:"JetBrains Mono",ui-monospace,monospace;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{background:var(--s0);overflow-x:clip}
+body{font-family:var(--disp);color:var(--ink);background:var(--s0);line-height:1.65;font-size:16px;overflow-x:clip;-webkit-font-smoothing:antialiased}
+a{color:inherit}
+img{display:block;max-width:100%}
+:focus-visible{outline:2px solid var(--acc);outline-offset:3px;border-radius:6px}
+.skip{position:absolute;left:-999px;top:8px;background:var(--acc);color:#141b2d;padding:8px 14px;border-radius:8px;z-index:100}
+.skip:focus-visible{left:12px}
+
+/* ---------- atmosphere: one light source, engineered grid, grain ---------- */
+.atmos{position:fixed;inset:0;pointer-events:none;z-index:0}
+.atmos .light{position:absolute;width:1100px;height:1100px;right:-320px;top:-460px;border-radius:50%;
+  background:radial-gradient(closest-side,rgba(253,181,74,.16),rgba(253,181,74,.05) 45%,transparent 72%);filter:blur(10px)}
+.atmos .light2{position:absolute;width:900px;height:900px;left:-420px;top:38%;border-radius:50%;
+  background:radial-gradient(closest-side,rgba(64,110,210,.10),transparent 70%)}
+.atmos .grid{position:absolute;inset:0;
+  background-image:linear-gradient(var(--line) 1px,transparent 1px),linear-gradient(90deg,var(--line) 1px,transparent 1px);
+  background-size:64px 64px;mask-image:radial-gradient(ellipse 70% 55% at 70% 18%,#000 0%,transparent 75%);opacity:.55}
+.atmos .grain{position:absolute;inset:-50%;opacity:.05;
+  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E")}
+
+.wrap{position:relative;z-index:1;max-width:1240px;margin:0 auto;padding:0 28px}
+.mono{font-family:var(--mono);font-size:12px;letter-spacing:.08em;text-transform:uppercase;color:var(--ink3)}
+.mono b{color:var(--acc);font-weight:500}
+
+/* ---------- nav ---------- */
+nav{position:sticky;top:0;z-index:50;backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);
+  background:linear-gradient(to bottom,rgba(10,17,32,.86),rgba(10,17,32,.55));border-bottom:1px solid var(--line)}
+nav .wrap{display:flex;align-items:center;gap:22px;height:68px}
+.brand{display:flex;align-items:center;gap:12px;text-decoration:none;font-weight:600;font-size:16px;letter-spacing:-.01em}
+.brand img{width:36px;height:36px;border-radius:50%;box-shadow:0 0 0 2px var(--acc),0 0 22px var(--accglow)}
+.brand span{color:var(--acc)}
+nav .links{display:flex;gap:26px;margin-left:auto;font-size:14px}
+nav .links a{text-decoration:none;color:var(--ink2);transition:color .2s}
+nav .links a:hover{color:var(--ink)}
+.btn{position:relative;white-space:nowrap;display:inline-flex;align-items:center;gap:10px;text-decoration:none;font-weight:600;font-size:15px;
+  border-radius:12px;padding:13px 20px;transition:transform .25s var(--ease-out),box-shadow .25s,background .25s,border-color .25s;will-change:transform}
+.btn svg{width:18px;height:18px;flex:none}
+.btn-acc{background:var(--acc);color:#141b2d;box-shadow:0 10px 30px -10px var(--accglow),inset 0 1px 0 rgba(255,255,255,.4)}
+.btn-acc:hover{background:#ffc566;box-shadow:0 16px 40px -10px rgba(253,181,74,.55),inset 0 1px 0 rgba(255,255,255,.5)}
+.btn-ghost{color:var(--ink);border:1px solid var(--line2);background:rgba(255,255,255,.02)}
+.btn-ghost:hover{border-color:rgba(255,255,255,.28);background:rgba(255,255,255,.05)}
+.btn-light{background:var(--ink);color:#0f1829}
+.btn-light:hover{background:#fff}
+.btn-sm{padding:9px 14px;font-size:13.5px;border-radius:10px}
+
+/* ---------- hero ---------- */
+.hero{padding:88px 0 64px}
+.hero .wrap{display:grid;grid-template-columns:1.05fr .95fr;gap:56px;align-items:center}
+.hero h1{font-size:clamp(40px,5.6vw,72px);line-height:1.02;letter-spacing:-.035em;font-weight:700;margin:18px 0 22px}
+.hero h1 em{font-style:normal;color:var(--acc);text-shadow:0 0 40px rgba(253,181,74,.25)}
+.hero p.lede{font-size:18px;color:var(--ink2);max-width:540px;font-weight:300}
+.hero p.lede strong{color:var(--ink);font-weight:500}
+.cta-row{display:flex;flex-wrap:wrap;gap:12px;margin-top:34px}
+.trust{display:flex;align-items:center;gap:14px;margin-top:36px;color:var(--ink3);font-size:13.5px}
+.trust img{width:44px;height:44px;border-radius:50%;object-fit:cover;box-shadow:0 0 0 2px var(--s0),0 0 0 3.5px var(--acc)}
+.trust strong{color:var(--ink);font-weight:500}
+
+/* hero visual: three real register panels in depth */
+.stage{position:relative;height:520px;perspective:1400px}
+.stack{position:absolute;inset:0;transform-style:preserve-3d;transform:rotateX(14deg) rotateY(-18deg) rotateZ(2deg)}
+.panel{position:absolute;border-radius:16px;background:linear-gradient(180deg,var(--s3),var(--s2));
+  border:1px solid var(--line2);box-shadow:0 40px 80px -30px rgba(0,0,0,.75),0 0 0 1px rgba(0,0,0,.3),inset 0 1px 0 rgba(255,255,255,.06);
+  overflow:hidden;transform-style:preserve-3d}
+.panel .bar{display:flex;align-items:center;gap:8px;padding:11px 14px;border-bottom:1px solid var(--line);font-family:var(--mono);font-size:11px;color:var(--ink3);letter-spacing:.06em;text-transform:uppercase}
+.panel .bar i{width:8px;height:8px;border-radius:50%;background:var(--line2)}
+.panel .bar i:first-child{background:var(--acc)}
+.p-reg{width:430px;left:0;top:0;transform:translateZ(-110px)}
+.p-heat{width:230px;right:-2%;top:16%;transform:translateZ(-30px)}
+.p-dash{width:300px;left:16%;bottom:-6%;transform:translateZ(60px)}
+.tbl{width:100%;border-collapse:collapse;font-size:11.5px}
+.tbl td{padding:9px 14px;border-bottom:1px solid var(--line);color:var(--ink2);white-space:nowrap}
+.tbl td:first-child{color:var(--ink)}
+.chip{display:inline-flex;align-items:center;gap:6px;font-family:var(--mono);font-size:10.5px;letter-spacing:.04em;padding:3px 8px;border-radius:6px;white-space:nowrap}
+.chip.r{color:#ffd0d0;background:rgba(242,109,109,.16);border:1px solid rgba(242,109,109,.35)}
+.chip.a{color:#ffe6ad;background:rgba(242,193,78,.14);border:1px solid rgba(242,193,78,.32)}
+.chip.g{color:#c9f5e4;background:rgba(79,209,161,.13);border:1px solid rgba(79,209,161,.3)}
+.chip.o{color:#1a2235;background:var(--acc)}
+.heat{display:grid;grid-template-columns:repeat(5,1fr);gap:5px;padding:14px}
+.heat span{aspect-ratio:1;border-radius:5px;background:rgba(79,209,161,.18)}
+.heat span.m{background:rgba(242,193,78,.25)} .heat span.h{background:rgba(242,109,109,.32)}
+.heat span.on{box-shadow:0 0 0 2px var(--acc),0 0 18px var(--accglow);background:rgba(242,109,109,.6)}
+.dash{display:grid;grid-template-columns:1fr 1fr;gap:1px;background:var(--line)}
+.dash div{background:var(--s2);padding:12px 16px}
+.dash .n{font-family:var(--mono);font-size:26px;font-weight:600;color:var(--ink);font-variant-numeric:tabular-nums;line-height:1.1}
+.dash .n.red{color:var(--red)}
+.dash .l{font-size:11px;color:var(--ink3);margin-top:4px}
+.spot{position:absolute;inset:0;pointer-events:none;border-radius:16px;
+  background:radial-gradient(260px circle at var(--mx,50%) var(--my,30%),rgba(255,255,255,.08),transparent 60%)}
+
+/* ---------- proof band ---------- */
+.band{position:relative;z-index:1;border-top:1px solid var(--line);border-bottom:1px solid var(--line);
+  background:linear-gradient(180deg,rgba(255,255,255,.015),rgba(255,255,255,0))}
+.band .wrap{display:grid;grid-template-columns:repeat(4,1fr)}
+.stat{padding:34px 24px 32px;border-left:1px solid var(--line)}
+.stat:first-child{border-left:0;padding-left:0}
+.stat .v{font-family:var(--mono);font-size:clamp(30px,3.4vw,44px);font-weight:600;letter-spacing:-.02em;font-variant-numeric:tabular-nums}
+.stat .v small{font-size:.5em;color:var(--acc);margin-left:2px}
+.stat .k{color:var(--ink3);font-size:14px;margin-top:4px}
+
+/* ---------- template rows ---------- */
+section.tpl{padding:110px 0 30px}
+.sec-head{display:grid;grid-template-columns:1fr 1fr;gap:40px;align-items:end;margin-bottom:56px}
+.sec-head h2{font-size:clamp(32px,3.6vw,48px);line-height:1.08;letter-spacing:-.03em;font-weight:700;margin-top:12px}
+.sec-head p{color:var(--ink2);font-weight:300;max-width:500px;justify-self:end}
+.row{display:grid;grid-template-columns:1fr 1.08fr;gap:64px;align-items:center;padding:56px 0;border-top:1px solid var(--line)}
+.row:nth-of-type(even) .copy{order:2}
+.copy .tag{display:inline-flex;align-items:center;gap:10px}
+.copy .tag::before{content:"";width:22px;height:1px;background:var(--acc)}
+.copy h3{font-size:clamp(26px,2.6vw,34px);letter-spacing:-.025em;line-height:1.15;margin:14px 0 14px;font-weight:700}
+.copy p{color:var(--ink2);font-weight:300;max-width:500px}
+.copy ul{list-style:none;margin:22px 0 26px;display:grid;gap:11px}
+.copy li{display:flex;gap:12px;color:var(--ink2);font-size:15px}
+.copy li svg{flex:none;width:18px;height:18px;margin-top:3px;color:var(--acc)}
+.copy .meta{display:flex;gap:18px;flex-wrap:wrap;align-items:center}
+.view{position:relative;border-radius:18px;background:linear-gradient(180deg,var(--s2),var(--s1));border:1px solid var(--line2);
+  box-shadow:0 50px 90px -45px rgba(0,0,0,.8),inset 0 1px 0 rgba(255,255,255,.05);overflow:hidden;transform-style:preserve-3d}
+.view .bar{display:flex;align-items:center;justify-content:space-between;padding:12px 16px;border-bottom:1px solid var(--line);font-family:var(--mono);font-size:11px;color:var(--ink3);letter-spacing:.06em;text-transform:uppercase}
+.view .body{padding:18px}
+/* inventory preview */
+.inv td{font-size:12.5px}
+/* pqc preview */
+.algos{display:grid;gap:8px}
+.algo{display:grid;grid-template-columns:1.2fr 1fr auto;align-items:center;gap:12px;padding:11px 14px;border-radius:10px;background:rgba(255,255,255,.025);border:1px solid var(--line)}
+.algo b{font-family:var(--mono);font-weight:500;font-size:13px}
+.algo span{color:var(--ink3);font-size:12.5px}
+.mosca{margin-top:16px;padding:14px;border-radius:12px;border:1px dashed var(--line2)}
+.mosca .lbl{display:flex;justify-content:space-between;font-family:var(--mono);font-size:11px;color:var(--ink3);margin-bottom:8px}
+.track{position:relative;height:12px;border-radius:6px;background:rgba(255,255,255,.05);overflow:hidden}
+.track .x{position:absolute;left:0;top:0;bottom:0;width:41%;background:linear-gradient(90deg,#6c8ccf,#8aa6e0)}
+.track .y{position:absolute;left:41%;top:0;bottom:0;width:24%;background:linear-gradient(90deg,var(--amber),#f6d27a)}
+.track .z{position:absolute;left:58%;top:-4px;bottom:-4px;width:2px;background:var(--red);box-shadow:0 0 12px var(--red)}
+/* ddq preview */
+.ddq{display:grid;grid-template-columns:170px 1fr;gap:22px;align-items:center}
+.gauge{position:relative;width:170px;height:170px}
+.gauge svg{width:100%;height:100%;transform:rotate(-90deg)}
+.gauge .c{position:absolute;inset:0;display:grid;place-items:center;text-align:center}
+.gauge .c b{font-family:var(--mono);font-size:30px;font-weight:600;font-variant-numeric:tabular-nums}
+.gauge .c span{display:block;font-size:11.5px;color:var(--ink3)}
+.bars{display:grid;gap:10px}
+.bars div{display:grid;grid-template-columns:130px 1fr 40px;gap:10px;align-items:center;font-size:12px;color:var(--ink2)}
+.bars i{display:block;height:7px;border-radius:4px;background:rgba(255,255,255,.06);overflow:hidden}
+.bars i em{display:block;height:100%;border-radius:4px;background:var(--ink2)}
+.bars i em.lo{background:var(--red)}
+.bars s{text-decoration:none;font-family:var(--mono);font-size:11.5px;color:var(--ink3);text-align:right}
+.verdict{display:flex;gap:10px;align-items:center;margin-top:16px;padding-top:14px;border-top:1px solid var(--line);font-size:13px;color:var(--ink2)}
+/* dpdp preview */
+.count{display:flex;align-items:flex-end;gap:16px;padding:6px 0 18px;border-bottom:1px solid var(--line)}
+.count b{font-family:var(--mono);font-size:64px;line-height:.9;font-weight:600;letter-spacing:-.04em;font-variant-numeric:tabular-nums}
+.count span{color:var(--ink3);font-size:13px;padding-bottom:6px}
+.count span strong{display:block;color:var(--ink);font-weight:500;font-size:15px}
+.phases{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-top:16px}
+.phase{padding:12px;border-radius:10px;border:1px solid var(--line);background:rgba(255,255,255,.02)}
+.phase .mono{font-size:10.5px}
+.phase div{font-size:13px;margin-top:4px}
+.phase.done{opacity:.55}
+.phase.next{border-color:rgba(253,181,74,.45);box-shadow:0 0 0 1px rgba(253,181,74,.15),0 0 30px -10px var(--accglow)}
+
+/* ---------- steps ---------- */
+section.how{padding:100px 0}
+.steps{position:relative;display:grid;grid-template-columns:repeat(3,1fr);gap:28px;margin-top:48px}
+.steps svg.line{position:absolute;left:0;right:0;top:22px;width:100%;height:4px;overflow:visible}
+.step{position:relative;padding-top:64px}
+.step .dot{position:absolute;top:8px;left:0;width:30px;height:30px;border-radius:50%;background:var(--s0);border:1.5px solid var(--acc);
+  display:grid;place-items:center;font-family:var(--mono);font-size:12px;color:var(--acc);box-shadow:0 0 22px var(--accglow)}
+.step h4{font-size:20px;letter-spacing:-.015em;margin-bottom:8px}
+.step p{color:var(--ink2);font-weight:300;font-size:15px}
+.step .y{display:inline-block;padding:0 6px;border-radius:4px;background:#fff4d6;color:#3a2a06;font-weight:500}
+
+/* ---------- about ---------- */
+section.about{padding:30px 0 110px}
+.card-john{position:relative;display:grid;grid-template-columns:auto 1fr auto;gap:36px;align-items:center;padding:40px;border-radius:24px;
+  background:radial-gradient(600px 300px at 85% 0%,rgba(253,181,74,.10),transparent 70%),linear-gradient(180deg,var(--s2),var(--s1));
+  border:1px solid var(--line2);box-shadow:0 50px 100px -50px rgba(0,0,0,.8)}
+.card-john img{width:112px;height:112px;border-radius:50%;object-fit:cover;box-shadow:0 0 0 3px var(--s1),0 0 0 5px var(--acc),0 0 50px var(--accglow)}
+.card-john h2{font-size:clamp(24px,2.4vw,32px);letter-spacing:-.025em;line-height:1.2}
+.card-john p{color:var(--ink2);font-weight:300;margin-top:10px;max-width:620px}
+.card-john .acts{display:grid;gap:10px;justify-items:stretch}
+
+footer{position:relative;z-index:1;border-top:1px solid var(--line);padding:34px 0 46px;color:var(--ink3);font-size:13.5px;font-weight:300}
+footer .wrap{display:grid;grid-template-columns:1.4fr 1fr;gap:30px}
+footer a{color:var(--ink2)}
+
+/* ---------- responsive ---------- */
+@media (max-width:1020px){
+  .hero .wrap{grid-template-columns:1fr}
+  .stage{height:440px;max-width:560px}
+  .row,.sec-head{grid-template-columns:1fr;gap:34px}
+  .row:nth-of-type(even) .copy{order:0}
+  .sec-head p{justify-self:start}
+  .card-john{grid-template-columns:auto 1fr}
+  .card-john .acts{grid-column:1/-1;grid-template-columns:1fr 1fr}
+}
+@media (max-width:720px){
+  nav .links{display:none}
+  .brand{font-size:15px;white-space:nowrap}
+  .brand span{display:none}
+  nav .btn-sm{margin-left:auto}
+  .wrap{padding:0 18px}
+  .hero{padding:48px 0 40px}
+  .stage{height:360px}
+  .stack{transform:rotateX(12deg) rotateY(-12deg)}
+  .p-reg{width:290px;left:0}
+  .p-heat{width:150px;top:20%}
+  .p-dash{width:230px;left:10%;bottom:-4%}
+  .band .wrap{grid-template-columns:1fr 1fr}
+  .stat{padding:24px 14px;border-left:0;border-top:1px solid var(--line)}
+  .stat:nth-child(-n+2){border-top:0}
+  .ddq{grid-template-columns:1fr;justify-items:center}
+  .bars{width:100%} .bars div{grid-template-columns:100px 1fr 36px}
+  .steps{grid-template-columns:1fr;gap:10px} .steps svg.line{display:none}
+  .card-john{grid-template-columns:1fr;padding:28px;text-align:left}
+  .card-john .acts{grid-template-columns:1fr}
+  .count b{font-size:52px}
+  .phases{grid-template-columns:1fr}
+  footer .wrap{grid-template-columns:1fr}
+  .tbl td:nth-child(3){display:none}
+}
+@media (prefers-reduced-motion:reduce){*{transition:none!important;animation:none!important}}
 </style>
 </head>
 <body>
-<div class="wrap">
-  <header>
-    <img src="assets/gms-logo.png" alt="GRC Made Simple logo">
-    <div class="brand">GRC Made Simple <b>Templates</b></div>
-  </header>
+<a class="skip" href="#templates">Skip to the templates</a>
+<div class="atmos" aria-hidden="true"><div class="light"></div><div class="light2"></div><div class="grid"></div><div class="grain"></div></div>
 
-  <section class="hero">
-    <h1>Free GRC templates that do <span>real work</span>, not just fill a slide.</h1>
-    <p class="lede">Working Excel registers with formulas, drop-downs, dashboards and worked examples. Built against the primary texts: the EU AI Act, ISO/IEC 42001, NIST, the DPDP Act and Rules. Free to use and share.</p>
-    <div class="follow">
-      <img src="assets/john.jpg" alt="John Bommeraveni Joseph">
-      <div class="who"><b>John Bommeraveni Joseph</b>ISO 27001, 42001 &amp; 27701 Lead Auditor. New templates and a free weekday newsletter, GRC Made Simple Daily, on LinkedIn.</div>
-      <a class="btn btn-primary" href="https://www.linkedin.com/in/john-bj/" target="_blank" rel="noopener">Follow John on LinkedIn</a>
+<nav aria-label="Main">
+  <div class="wrap">
+    <a class="brand" href="#top"><img src="assets/gms-logo.png" alt="">GRC Made Simple <span>Templates</span></a>
+    <div class="links"><a href="#templates">Templates</a><a href="#how">How to use</a><a href="#about">About</a></div>
+    <a class="btn btn-acc btn-sm magnetic" href="https://www.linkedin.com/in/john-bj/" target="_blank" rel="noopener">Follow John</a>
+  </div>
+</nav>
+
+<main id="top">
+<header class="hero">
+  <div class="wrap">
+    <div>
+      <div class="mono reveal">Free <b>·</b> CC BY 4.0 <b>·</b> No signup</div>
+      <h1 class="split">GRC templates that hold up <em>in an audit.</em></h1>
+      <p class="lede reveal">Four working Excel registers built against the primary texts: the EU AI Act, ISO/IEC 42001, NIST and India's DPDP Rules. <strong><span data-total-formulas>5,367</span> live formulas</strong>, worked examples, and dashboards your risk committee can read.</p>
+      <div class="cta-row reveal">
+        <a class="btn btn-acc magnetic" href="https://www.linkedin.com/in/john-bj/" target="_blank" rel="noopener">
+          <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M4.98 3.5a2.5 2.5 0 1 1 0 5 2.5 2.5 0 0 1 0-5ZM3 9h4v12H3V9Zm7 0h3.8v1.7h.05c.53-1 1.83-2.05 3.77-2.05 4.03 0 4.78 2.65 4.78 6.1V21h-4v-5.5c0-1.31-.02-3-1.83-3-1.83 0-2.11 1.43-2.11 2.9V21h-4V9Z"/></svg>
+          Follow John on LinkedIn</a>
+        <a class="btn btn-ghost" href="#templates">Browse the templates
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M12 5v14M5 12l7 7 7-7"/></svg></a>
+      </div>
+      <div class="trust reveal"><img src="assets/john.jpg" alt=""><div>By <strong>John Bommeraveni Joseph</strong><br>ISO 27001, 42001 &amp; 27701 Lead Auditor</div></div>
     </div>
-  </section>
+    <div class="stage" id="stage" aria-hidden="true">
+      <div class="stack" id="stack">
+        <div class="panel p-reg">
+          <div class="bar"><i></i><i></i><i></i>&nbsp;Risk register</div>
+          <table class="tbl">
+            <tr><td>Prompt injection via email</td><td>3 × 5</td><td><span class="chip r">High</span></td></tr>
+            <tr><td>Model change not notified</td><td>3 × 3</td><td><span class="chip a">Medium</span></td></tr>
+            <tr><td>Training on customer data</td><td>2 × 4</td><td><span class="chip a">Medium</span></td></tr>
+            <tr><td>Shadow AI in sales team</td><td>2 × 3</td><td><span class="chip g">Low</span></td></tr>
+          </table>
+        </div>
+        <div class="panel p-heat">
+          <div class="bar"><i></i><i></i><i></i>&nbsp;Heat map</div>
+          <div class="heat">
+            <span></span><span class="m"></span><span class="h"></span><span class="h"></span><span class="h"></span>
+            <span></span><span class="m"></span><span class="m"></span><span class="h"></span><span class="h"></span>
+            <span></span><span></span><span class="m"></span><span class="m"></span><span class="h on"></span>
+            <span></span><span></span><span></span><span class="m"></span><span class="m"></span>
+            <span></span><span></span><span></span><span></span><span></span>
+          </div>
+        </div>
+        <div class="panel p-dash">
+          <div class="bar"><i></i><i></i><i></i>&nbsp;Dashboard &middot; example</div>
+          <div class="dash">
+            <div><div class="n" data-count="12">12</div><div class="l">AI systems</div></div>
+            <div><div class="n red" data-count="1">1</div><div class="l">Lethal trifecta</div></div>
+            <div><div class="n" data-count="3">3</div><div class="l">Impact assessments due</div></div>
+            <div><div class="n" data-count="0">0</div><div class="l">Reviews overdue</div></div>
+          </div>
+          <div class="spot"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</header>
 
-  <section class="grid">
-    <article class="card">
-      <div class="tag">AI governance</div>
-      <h2>AI System Inventory &amp; Risk Register</h2>
-      <p>One register for every AI system you build, buy or use, mapped to EU AI Act roles and risk classes and ISO/IEC 42001 Annex A.</p>
-      <ul><li>26-field inventory with automatic warnings, including the "lethal trifecta"</li><li>Risk register with inherent and residual scoring</li><li>Board dashboard and 5x5 heat map</li></ul>
-      <div class="meta">Excel · 7 sheets</div>
-      <a class="btn btn-ghost" href="templates/GRC-Made-Simple_AI-System-Inventory-and-Risk-Register.xlsx" download>Download</a>
-    </article>
-    <article class="card">
-      <div class="tag">Post-quantum</div>
-      <h2>Crypto Inventory &amp; PQC Migration Workbook</h2>
-      <p>Find where your quantum-vulnerable cryptography lives and plan the move to NIST FIPS 203, 204 and 205.</p>
-      <ul><li>Auto-classifies algorithms; Mosca test and harvest-now-decrypt-later flags</li><li>Priority scoring and vendor roadmap tracker</li><li>Verified deadlines: NIST IR 8547, US EO 14412, UK NCSC, EU roadmap</li></ul>
-      <div class="meta">Excel · 9 sheets</div>
-      <a class="btn btn-ghost" href="templates/GRC-Made-Simple_Crypto-Inventory-and-PQC-Migration-Workbook.xlsx" download>Download</a>
-    </article>
-    <article class="card">
-      <div class="tag">Third-party risk</div>
-      <h2>AI Vendor Due-Diligence Questionnaire</h2>
-      <p>74 questions that get past the logo slide: training on your data, silent model changes, agent permissions, incident notice, exit.</p>
-      <ul><li>What good evidence looks like, for every question</li><li>Weighted scoring, red flags and a recommendation</li><li>Follow-up tracker with overdue alerts</li></ul>
-      <div class="meta">Excel · 74 questions · 14 sections</div>
-      <a class="btn btn-ghost" href="templates/GRC-Made-Simple_AI-Vendor-Due-Diligence-Questionnaire.xlsx" download>Download</a>
-    </article>
-    <article class="card">
-      <div class="tag">Privacy · India</div>
-      <h2>DPDP Act &amp; Rules Readiness Checklist</h2>
-      <p>99 requirements from the Digital Personal Data Protection Act 2023 and Rules 2025, each with its section or rule and who it applies to.</p>
-      <ul><li>Applicability screen that switches rows on and off</li><li>Phase dates and live countdowns</li><li>Readiness by area, open high-priority gaps, penalties schedule</li></ul>
-      <div class="meta">Excel · 99 requirements</div>
-      <a class="btn btn-ghost" href="templates/GRC-Made-Simple_DPDP-Readiness-Checklist.xlsx" download>Download</a>
-    </article>
-  </section>
+<section class="band" aria-label="What is inside">
+  <div class="wrap" id="stats"></div>
+</section>
 
-  <section class="note">
-    <p><b>How to use them.</b> Open the "Start here" tab first. Yellow cells are yours to fill; grey cells calculate. Row 6 on each register is a worked example to overwrite.</p>
-    <p style="margin-top:10px"><b>Important.</b> These templates support, and do not replace, legal advice or the licensed text of the standards. Standards are referenced by clause number and title only. Check the current text of any regulation before relying on a date.</p>
-    <p style="margin-top:10px">Free to use, adapt and share under <a href="https://creativecommons.org/licenses/by/4.0/" target="_blank" rel="noopener">CC BY 4.0</a>, keeping the credit to John Bommeraveni Joseph. New templates are announced first on <a href="https://www.linkedin.com/in/john-bj/" target="_blank" rel="noopener">LinkedIn</a>.</p>
-  </section>
-</div>
+<section class="tpl" id="templates">
+  <div class="wrap">
+    <div class="sec-head">
+      <div><div class="mono reveal">The templates</div><h2 class="split">Built to be used on Monday, not admired on Friday.</h2></div>
+      <p class="reveal">Every template opens on a "Start here" tab, ships with a worked example, and flags its own gaps: an unclassified AI system, a quantum-vulnerable key exchange, a vendor red flag, a DPDP deadline.</p>
+    </div>
+
+    <article class="row">
+      <div class="copy">
+        <div class="mono tag">AI governance</div>
+        <h3>AI System Inventory &amp; Risk Register</h3>
+        <p>One register for every AI system you build, buy or use, mapped to EU AI Act roles and risk classes and ISO/IEC 42001 Annex A.</p>
+        <ul>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M20 6 9 17l-5-5"/></svg>26-field inventory that warns you: prohibited practice, unclassified system, the "lethal trifecta"</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M20 6 9 17l-5-5"/></svg>Risk register in cause, event, consequence form, with inherent and residual scoring</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M20 6 9 17l-5-5"/></svg>Board dashboard and a live 5 × 5 heat map</li>
+        </ul>
+        <div class="meta"><a class="btn btn-light dl" href="templates/GRC-Made-Simple_AI-System-Inventory-and-Risk-Register.xlsx" download>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 3v12m0 0-5-5m5 5 5-5M4 21h16"/></svg>Download (.xlsx)</a>
+          <span class="mono">7 sheets · 1,391 formulas</span></div>
+      </div>
+      <div class="view tilt" aria-hidden="true">
+        <div class="bar"><span>AI Inventory</span><span>Example data</span></div>
+        <div class="body">
+          <table class="tbl inv">
+            <tr><td>Customer support assistant</td><td>Deployer</td><td><span class="chip r flag">Lethal trifecta</span></td></tr>
+            <tr><td>Credit scoring model</td><td>Provider</td><td><span class="chip r flag">High-risk · Annex III</span></td></tr>
+            <tr><td>HR CV screening (SaaS)</td><td>Deployer</td><td><span class="chip a flag">Impact assessment due</span></td></tr>
+            <tr><td>Code assistant</td><td>Deployer</td><td><span class="chip g flag">No flags</span></td></tr>
+          </table>
+        </div>
+      </div>
+    </article>
+
+    <article class="row">
+      <div class="copy">
+        <div class="mono tag">Post-quantum</div>
+        <h3>Crypto Inventory &amp; PQC Migration Workbook</h3>
+        <p>Find where your quantum-vulnerable cryptography lives and plan the move to NIST FIPS 203, 204 and 205, with deadlines verified against the primary texts.</p>
+        <ul>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M20 6 9 17l-5-5"/></svg>Classifies every algorithm automatically and flags harvest-now, decrypt-later exposure</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M20 6 9 17l-5-5"/></svg>Mosca test with a planning value you own and sign off</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M20 6 9 17l-5-5"/></svg>Deadlines from NIST IR 8547 (final), US EO 14412, UK NCSC and the EU roadmap</li>
+        </ul>
+        <div class="meta"><a class="btn btn-light dl" href="templates/GRC-Made-Simple_Crypto-Inventory-and-PQC-Migration-Workbook.xlsx" download>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 3v12m0 0-5-5m5 5 5-5M4 21h16"/></svg>Download (.xlsx)</a>
+          <span class="mono">9 sheets · 2,256 formulas</span></div>
+      </div>
+      <div class="view tilt" aria-hidden="true">
+        <div class="bar"><span>Crypto inventory</span><span>Example data</span></div>
+        <div class="body">
+          <div class="algos">
+            <div class="algo"><b>RSA-2048</b><span>Code signing</span><span class="chip r">Vulnerable</span></div>
+            <div class="algo"><b>X25519</b><span>TLS key exchange</span><span class="chip r">Vulnerable</span></div>
+            <div class="algo"><b>AES-256</b><span>Disk encryption</span><span class="chip g">OK</span></div>
+            <div class="algo"><b>ML-KEM-768</b><span>FIPS 203 target</span><span class="chip o">Target</span></div>
+          </div>
+          <div class="mosca">
+            <div class="lbl"><span>X data lifetime + Y migration</span><span>Z</span></div>
+            <div class="track"><div class="x"></div><div class="y"></div><div class="z"></div></div>
+            <div class="lbl" style="margin:8px 0 0"><span>X + Y &gt; Z</span><span style="color:var(--red)">At risk now</span></div>
+          </div>
+        </div>
+      </div>
+    </article>
+
+    <article class="row">
+      <div class="copy">
+        <div class="mono tag">Third-party risk</div>
+        <h3>AI Vendor Due-Diligence Questionnaire</h3>
+        <p>74 questions that get past the logo slide: training on your data, silent model changes, agent permissions, AI-incident notice and exit.</p>
+        <ul>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M20 6 9 17l-5-5"/></svg>What good evidence looks like, for every question</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M20 6 9 17l-5-5"/></svg>Weighted scoring across 14 sections, red flags on critical answers</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M20 6 9 17l-5-5"/></svg>A recommendation you can defend: approve, conditions, escalate or reject</li>
+        </ul>
+        <div class="meta"><a class="btn btn-light dl" href="templates/GRC-Made-Simple_AI-Vendor-Due-Diligence-Questionnaire.xlsx" download>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 3v12m0 0-5-5m5 5 5-5M4 21h16"/></svg>Download (.xlsx)</a>
+          <span class="mono">74 questions · 917 formulas</span></div>
+      </div>
+      <div class="view tilt" aria-hidden="true">
+        <div class="bar"><span>Scoring summary</span><span>Worked example in the file</span></div>
+        <div class="body">
+          <div class="ddq">
+            <div class="gauge">
+              <svg viewBox="0 0 120 120"><circle cx="60" cy="60" r="50" fill="none" stroke="rgba(255,255,255,.07)" stroke-width="10"/>
+                <circle id="gaugeArc" cx="60" cy="60" r="50" fill="none" stroke="#fdb54a" stroke-width="10" stroke-linecap="round" stroke-dasharray="314.16" stroke-dashoffset="82.3"/></svg>
+              <div class="c"><div><b data-count="73.8" data-dec="1">73.8</b><b>%</b><span>Adequate</span></div></div>
+            </div>
+            <div class="bars">
+              <div>Training &amp; data use<i><em style="width:75%"></em></i><s>75%</s></div>
+              <div>Security &amp; certs<i><em style="width:77%"></em></i><s>77%</s></div>
+              <div>Model change mgmt<i><em class="lo" style="width:46%"></em></i><s>46%</s></div>
+              <div>Incident notice<i><em style="width:72%"></em></i><s>72%</s></div>
+            </div>
+          </div>
+          <div class="verdict"><span class="chip r">1 red flag</span>No contractual notice of model changes <span class="chip a" style="margin-left:auto">Escalate</span></div>
+        </div>
+      </div>
+    </article>
+
+    <article class="row">
+      <div class="copy">
+        <div class="mono tag">Privacy · India</div>
+        <h3>DPDP Act &amp; Rules Readiness Checklist</h3>
+        <p>99 requirements from the Digital Personal Data Protection Act 2023 and the DPDP Rules 2025, each with its section or rule and who it falls on.</p>
+        <ul>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M20 6 9 17l-5-5"/></svg>Applicability screen that switches rows on and off</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M20 6 9 17l-5-5"/></svg>Phase dates from the official Gazette, with live countdowns</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M20 6 9 17l-5-5"/></svg>Readiness by area, open high-priority gaps and the penalty schedule</li>
+        </ul>
+        <div class="meta"><a class="btn btn-light dl" href="templates/GRC-Made-Simple_DPDP-Readiness-Checklist.xlsx" download>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 3v12m0 0-5-5m5 5 5-5M4 21h16"/></svg>Download (.xlsx)</a>
+          <span class="mono">99 requirements · 803 formulas</span></div>
+      </div>
+      <div class="view tilt" aria-hidden="true">
+        <div class="bar"><span>Timeline</span><span>From the Gazette</span></div>
+        <div class="body">
+          <div class="count"><b id="dpdpDays">198</b><span><strong>days to Phase 3</strong>13 May 2027: most obligations apply</span></div>
+          <div class="phases">
+            <div class="phase done"><div class="mono">Phase 1</div><div>13 Nov 2025</div></div>
+            <div class="phase" id="ph2"><div class="mono">Phase 2</div><div>13 Nov 2026</div></div>
+            <div class="phase next" id="ph3"><div class="mono">Phase 3</div><div>13 May 2027</div></div>
+          </div>
+        </div>
+      </div>
+    </article>
+  </div>
+</section>
+
+<section class="how" id="how">
+  <div class="wrap">
+    <div class="mono reveal">How to use them</div>
+    <h2 class="split" style="font-size:clamp(30px,3.4vw,44px);letter-spacing:-.03em;line-height:1.1;margin-top:12px;max-width:760px">A first pass takes an afternoon, not a project.</h2>
+    <div class="steps">
+      <svg class="line" viewBox="0 0 1000 4" preserveAspectRatio="none" aria-hidden="true"><line id="stepLine" x1="0" y1="2" x2="1000" y2="2" stroke="rgba(253,181,74,.5)" stroke-width="2" stroke-dasharray="6 8"/></svg>
+      <div class="step"><div class="dot">1</div><h4>Download</h4><p>Pick the template for the problem in front of you. No account, no email, no tracking.</p></div>
+      <div class="step"><div class="dot">2</div><h4>Open "Start here"</h4><p>Every workbook explains itself on its first tab and ships with a worked example in row 6.</p></div>
+      <div class="step"><div class="dot">3</div><h4>Fill the <span class="y">yellow</span> cells</h4><p>Grey cells calculate. The flags and the dashboard update as you go, so the gaps find you.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="about" id="about">
+  <div class="wrap">
+    <div class="card-john reveal">
+      <img src="assets/john.jpg" alt="John Bommeraveni Joseph">
+      <div>
+        <div class="mono">Made by</div>
+        <h2>John Bommeraveni Joseph</h2>
+        <p>ISO 27001, 42001 &amp; 27701 Lead Auditor, Co-Founder &amp; CPTO at Purplecop Security, and creator of the free GRC Practice Lab used by more than 10,000 people in 34 countries. New templates land first on LinkedIn, alongside the free weekday newsletter, GRC Made Simple Daily.</p>
+      </div>
+      <div class="acts">
+        <a class="btn btn-acc magnetic" href="https://www.linkedin.com/in/john-bj/" target="_blank" rel="noopener">
+          <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M4.98 3.5a2.5 2.5 0 1 1 0 5 2.5 2.5 0 0 1 0-5ZM3 9h4v12H3V9Zm7 0h3.8v1.7h.05c.53-1 1.83-2.05 3.77-2.05 4.03 0 4.78 2.65 4.78 6.1V21h-4v-5.5c0-1.31-.02-3-1.83-3-1.83 0-2.11 1.43-2.11 2.9V21h-4V9Z"/></svg>Follow John on LinkedIn</a>
+        <a class="btn btn-ghost" href="https://www.linkedin.com/newsletters/grc-made-simple-7493284804747251713/" target="_blank" rel="noopener">Subscribe to the newsletter</a>
+      </div>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <div><strong style="color:var(--ink);font-weight:500">Important.</strong> These templates support, and do not replace, legal advice or the licensed text of the standards. Standards are referenced by clause number and title only. Check the current text of any regulation before relying on a date.</div>
+    <div>Free to use, adapt and share under <a href="https://creativecommons.org/licenses/by/4.0/" target="_blank" rel="noopener">CC BY 4.0</a>, keeping the credit to John Bommeraveni Joseph. <a href="https://github.com/Johnbjoseph-cybersec/grc-made-simple-templates" target="_blank" rel="noopener">Source on GitHub</a>.</div>
+  </div>
+</footer>
+
+<script src="vendor/gsap.min.js"></script>
+<script src="vendor/ScrollTrigger.min.js"></script>
+<script src="vendor/SplitText.min.js"></script>
+<script src="vendor/lenis.min.js"></script>
+<script>
+/* Everything is visible without JS. Each block below enhances and is isolated, so one failure cannot cost the
+   page its downloads or its call to action. */
+(function () {
+  "use strict";
+  var TEMPLATES = [
+    { name: "AI System Inventory & Risk Register", formulas: 1391 },
+    { name: "Crypto Inventory & PQC Migration Workbook", formulas: 2256 },
+    { name: "AI Vendor Due-Diligence Questionnaire", formulas: 917, questions: 74 },
+    { name: "DPDP Act & Rules Readiness Checklist", formulas: 803, requirements: 99 }
+  ];
+  var total = TEMPLATES.reduce(function (s, t) { return s + t.formulas; }, 0);
+  var fmt = function (n) { return n.toLocaleString("en-GB"); };
+  var reduce = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+  var fine = window.matchMedia("(pointer: fine)").matches;
+  function safe(fn) { try { fn(); } catch (e) { if (window.console) console.warn("[enhance]", e); } }
+
+  // counts are derived from the data, never baked
+  safe(function () {
+    document.querySelectorAll("[data-total-formulas]").forEach(function (el) { el.textContent = fmt(total); });
+    var stats = [
+      { v: TEMPLATES.length, k: "free templates" },
+      { v: total, k: "working formulas" },
+      { v: 0, k: "formula errors after recalculation" },
+      { v: TEMPLATES[2].questions + TEMPLATES[3].requirements, k: "vendor questions and DPDP requirements" }
+    ];
+    document.getElementById("stats").innerHTML = stats.map(function (s) {
+      return '<div class="stat"><div class="v" data-count="' + s.v + '">' + fmt(s.v) + '</div><div class="k">' + s.k + "</div></div>";
+    }).join("");
+  });
+
+  // live DPDP countdown (Phase 3: 13 May 2027, Phase 2: 13 Nov 2026 - from G.S.R. 846(E))
+  safe(function () {
+    var today = new Date(); today.setHours(0, 0, 0, 0);
+    var p3 = new Date(2027, 4, 13), p2 = new Date(2026, 10, 13);
+    var d = Math.max(0, Math.round((p3 - today) / 864e5));
+    var el = document.getElementById("dpdpDays"); el.textContent = d; el.setAttribute("data-count", d);
+    if (today >= p2) { document.getElementById("ph2").classList.add("done"); }
+  });
+
+  if (reduce || !window.gsap) return;
+  gsap.registerPlugin(ScrollTrigger, SplitText);
+  var EASE = "expo.out", EASE2 = "power3.inOut";
+
+  // one RAF loop: Lenis driven from gsap.ticker
+  safe(function () {
+    if (!window.Lenis) return;
+    var lenis = new Lenis({ duration: 1.1, smoothWheel: true });
+    window.__lenis = lenis;
+    lenis.on("scroll", ScrollTrigger.update);
+    gsap.ticker.add(function (t) { lenis.raf(t * 1000); });
+    gsap.ticker.lagSmoothing(0);
+    document.querySelectorAll('a[href^="#"]').forEach(function (a) {
+      a.addEventListener("click", function (e) {
+        var id = a.getAttribute("href"); if (id.length < 2) return;
+        var t = document.querySelector(id); if (!t) return;
+        e.preventDefault(); lenis.scrollTo(t, { offset: -70 });
+      });
+    });
+  });
+
+  function countUp(el, delay) {
+    var to = parseFloat(el.getAttribute("data-count")); if (isNaN(to)) return;
+    var dec = parseInt(el.getAttribute("data-dec") || "0", 10), o = { v: 0 };
+    gsap.to(o, { v: to, duration: 1.6, delay: delay || 0, ease: "power2.out",
+      onUpdate: function () { el.textContent = dec ? o.v.toFixed(dec) : fmt(Math.round(o.v)); } });
+  }
+
+  // hero: headline by words, then the stack assembles in depth
+  safe(function () {
+    var h = new SplitText(".hero h1", { type: "words", wordsClass: "w" });
+    var tl = gsap.timeline({ defaults: { ease: EASE } });
+    tl.from(h.words, { yPercent: 60, opacity: 0, rotateX: -40, duration: 1, stagger: .06, clearProps: "transform,opacity" })
+      .from(".hero .reveal", { y: 24, opacity: 0, duration: .9, stagger: .1, clearProps: "transform,opacity" }, "-=.6")
+      .from(".p-reg", { z: -500, opacity: 0, duration: 1.2 }, "-=1.1")
+      .from(".p-heat", { x: 160, opacity: 0, duration: 1.1 }, "-=.95")
+      .from(".p-dash", { y: 180, opacity: 0, duration: 1.1 }, "-=.9")
+      .from(".heat span", { scale: .2, opacity: 0, duration: .5, stagger: { each: .025, from: "end" }, ease: "back.out(2)" }, "-=.6")
+      .add(function () { document.querySelectorAll(".p-dash [data-count]").forEach(function (n, i) { countUp(n, i * .08); }); }, "-=.4");
+  });
+
+  // depth: the stack follows the pointer (desktop only), with a light that tracks it
+  safe(function () {
+    if (!fine) return;
+    var stage = document.getElementById("stage"), stack = document.getElementById("stack"), spot = document.querySelector(".p-dash .spot");
+    var rx = gsap.quickTo(stack, "rotationX", { duration: .9, ease: "power3.out" });
+    var ry = gsap.quickTo(stack, "rotationY", { duration: .9, ease: "power3.out" });
+    gsap.set(stack, { rotationX: 14, rotationY: -18, rotationZ: 2 });
+    stage.addEventListener("pointermove", function (e) {
+      var r = stage.getBoundingClientRect(), px = (e.clientX - r.left) / r.width - .5, py = (e.clientY - r.top) / r.height - .5;
+      rx(14 - py * 14); ry(-18 + px * 22);
+      if (spot) { spot.style.setProperty("--mx", ((px + .5) * 100) + "%"); spot.style.setProperty("--my", ((py + .5) * 100) + "%"); }
+    });
+    stage.addEventListener("pointerleave", function () { rx(14); ry(-18); });
+  });
+
+  // magnetic primary buttons
+  safe(function () {
+    if (!fine) return;
+    document.querySelectorAll(".magnetic").forEach(function (b) {
+      var xTo = gsap.quickTo(b, "x", { duration: .4, ease: "power3.out" }), yTo = gsap.quickTo(b, "y", { duration: .4, ease: "power3.out" });
+      b.addEventListener("pointermove", function (e) { var r = b.getBoundingClientRect(); xTo((e.clientX - r.left - r.width / 2) * .25); yTo((e.clientY - r.top - r.height / 2) * .35); });
+      b.addEventListener("pointerleave", function () { xTo(0); yTo(0); });
+    });
+  });
+
+  // proof band counts up once
+  safe(function () {
+    ScrollTrigger.create({ trigger: ".band", start: "top 85%", once: true,
+      onEnter: function () { document.querySelectorAll(".band [data-count]").forEach(function (n, i) { countUp(n, i * .12); }); } });
+  });
+
+  // section headings and reveals (paused timelines, triggered once - never a live trigger on an empty timeline)
+  safe(function () {
+    document.querySelectorAll("section .split").forEach(function (el) {
+      var s = new SplitText(el, { type: "words" });
+      var tl = gsap.timeline({ paused: true }).from(s.words, { yPercent: 80, opacity: 0, duration: .9, stagger: .04, ease: EASE, clearProps: "transform,opacity" });
+      ScrollTrigger.create({ trigger: el, start: "top 85%", once: true, onEnter: function () { tl.play(); } });
+    });
+    document.querySelectorAll("section .reveal").forEach(function (el) {
+      var tl = gsap.timeline({ paused: true }).from(el, { y: 30, opacity: 0, duration: .9, ease: EASE, clearProps: "transform,opacity" });
+      ScrollTrigger.create({ trigger: el, start: "top 88%", once: true, onEnter: function () { tl.play(); } });
+    });
+  });
+
+  // each template row: copy rises, the preview assembles and shows the template doing its job
+  safe(function () {
+    document.querySelectorAll(".row").forEach(function (row, idx) {
+      var view = row.querySelector(".view"), tl = gsap.timeline({ paused: true, defaults: { ease: EASE } });
+      tl.from(row.querySelectorAll(".copy > *"), { y: 28, opacity: 0, duration: .8, stagger: .07, clearProps: "transform,opacity" })
+        .from(view, { y: 60, rotateX: 10, opacity: 0, duration: 1.1, transformPerspective: 1200, clearProps: "opacity" }, "-=.7");
+      if (idx === 0) tl.from(row.querySelectorAll(".inv tr"), { x: -20, opacity: 0, duration: .6, stagger: .09, clearProps: "transform,opacity" }, "-=.6")
+                       .from(row.querySelectorAll(".flag"), { scale: .6, opacity: 0, duration: .5, stagger: .12, ease: "back.out(2.4)", clearProps: "transform,opacity" }, "-=.2");
+      if (idx === 1) tl.from(row.querySelectorAll(".algo"), { x: 30, opacity: 0, duration: .6, stagger: .09, clearProps: "transform,opacity" }, "-=.6")
+                       .from(row.querySelectorAll(".algo .chip"), { scale: .5, opacity: 0, duration: .45, stagger: .1, ease: "back.out(2.4)", clearProps: "transform,opacity" }, "-=.3")
+                       .from(row.querySelector(".track .x"), { width: 0, duration: .9, ease: EASE2 }, "-=.2")
+                       .from(row.querySelector(".track .y"), { width: 0, duration: .7, ease: EASE2 }, "-=.1")
+                       .from(row.querySelector(".track .z"), { opacity: 0, scaleY: 0, duration: .4 }, "-=.1");
+      if (idx === 2) tl.from("#gaugeArc", { attr: { "stroke-dashoffset": 314.16 }, duration: 1.4, ease: EASE2 }, "-=.6")
+                       .add(function () { countUp(row.querySelector(".gauge [data-count]")); }, "<")
+                       .from(row.querySelectorAll(".bars em"), { width: 0, duration: 1, stagger: .1, ease: EASE2 }, "<.2")
+                       .from(row.querySelector(".verdict"), { y: 12, opacity: 0, duration: .6, clearProps: "transform,opacity" }, "-=.3");
+      if (idx === 3) tl.add(function () { countUp(row.querySelector("#dpdpDays")); }, "-=.6")
+                       .from(row.querySelectorAll(".phase"), { y: 20, opacity: 0, duration: .6, stagger: .12, clearProps: "transform,opacity" }, "<.2");
+      ScrollTrigger.create({ trigger: row, start: "top 75%", once: true, onEnter: function () { tl.play(); } });
+    });
+  });
+
+  // preview cards tilt toward the pointer (depth without a 3D engine)
+  safe(function () {
+    if (!fine) return;
+    document.querySelectorAll(".tilt").forEach(function (v) {
+      var rx = gsap.quickTo(v, "rotationX", { duration: .6, ease: "power3.out" }), ry = gsap.quickTo(v, "rotationY", { duration: .6, ease: "power3.out" });
+      gsap.set(v, { transformPerspective: 1100 });
+      v.addEventListener("pointermove", function (e) { var r = v.getBoundingClientRect(); rx(-((e.clientY - r.top) / r.height - .5) * 8); ry(((e.clientX - r.left) / r.width - .5) * 10); });
+      v.addEventListener("pointerleave", function () { rx(0); ry(0); });
+    });
+  });
+
+  // the steps line draws itself, then each step lands in sequence
+  safe(function () {
+    var tl = gsap.timeline({ paused: true });
+    tl.from("#stepLine", { attr: { x2: 0 }, duration: 1.2, ease: EASE2 })
+      .from(".step", { y: 30, opacity: 0, duration: .8, stagger: .15, ease: EASE, clearProps: "transform,opacity" }, "-=.9");
+    ScrollTrigger.create({ trigger: ".steps", start: "top 80%", once: true, onEnter: function () { tl.play(); } });
+  });
+
+  // the light source drifts slowly with scroll, giving the page one continuous sense of depth
+  safe(function () {
+    gsap.to(".atmos .light", { yPercent: 35, xPercent: -10, ease: "none", scrollTrigger: { trigger: document.body, start: "top top", end: "bottom bottom", scrub: 1.2 } });
+    gsap.to(".atmos .grid", { backgroundPosition: "0 220px", ease: "none", scrollTrigger: { trigger: document.body, start: "top top", end: "bottom bottom", scrub: 1.2 } });
+  });
+
+  window.addEventListener("load", function () { safe(function () { ScrollTrigger.refresh(); }); });
+})();
+</script>
 </body>
 </html>
